@@ -8,10 +8,7 @@ FROM node:14-buster-slim
 RUN yarn global add gatsby-cli
 
 # The port gatsby runs on
-EXPOSE 9000
 WORKDIR /app
 COPY ./package.json /app
 COPY ./yarn.lock /app
-RUN yarn install && yarn cache clean
 COPY . /app
-#CMD ["gatsby", "develop", "-H", "0.0.0.0" ]

@@ -1,12 +1,12 @@
 version: "3"
 services:
-  web:
+  gatsby:
     build:
       context: .
       dockerfile: Dockerfile.dev
     ports:
-      - "9000:9000"
-    command: bash -c "yarn dev"
+      - "8888:8888"
+    command: bash -c "yarn && yarn clean && yarn start"
     volumes:
       - /app/node_modules
       - .:/app
